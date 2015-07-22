@@ -1,0 +1,14 @@
+[package]
+name = "algorithms"
+version = "0.1.0"
+authors = ["Levin Fritz <levin.fritz@gmail.com>"]
+
+[dependencies]
+rand = "0.3"
+time = "0.1"
+docopt = "*"
+rustc-serialize = "*"
+
+[[bin]]
+name = "sort_compare"
+path = "src/sort_compare.rs"
