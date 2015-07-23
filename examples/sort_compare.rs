@@ -9,11 +9,13 @@ use rand::Rng;
 use rand::ThreadRng;
 
 static USAGE: &'static str = "
-Usage: sort_compare [-n N] <algorithm1> <algorithm2>
+Usage: sort_compare [-n N] [-t T] <algorithm1> <algorithm2>
+       sort_compare --help
 
 Options:
-    -n N    input size [default: 1000]
-    -t T    repetitions [default: 100]
+    -h --help   Show this message
+    -n N        Set input size [default: 1000]
+    -t T        Set number of repetitions [default: 100]
 ";
 
 type SortFunction = fn(&mut Vec<i64>) -> ();
@@ -47,6 +49,7 @@ fn time_sort(rng: &mut ThreadRng,
 
 fn get_sort(name: &String) -> SortFunction {
     match name.as_ref() {
+        "quick"     => algorithms::sorting::quick::sort,
         "merge_bu"  => algorithms::sorting::merge::bottom_up::sort,
         "merge_td"  => algorithms::sorting::merge::top_down::sort,
         "shell"     => algorithms::sorting::shell::sort,
