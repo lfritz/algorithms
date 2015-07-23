@@ -19,7 +19,13 @@ fn sort_part<T: Ord + Copy>(v: &mut Vec<T>, aux: &mut Vec<T>,
     super::merge(v, aux, lo, mid, hi);
 }
 
-#[test]
-fn sort_works() {
-    super::super::tests::test_sort(sort);
+#[cfg(test)]
+mod tests {
+    use super::sort;
+    use super::super::super::tests::test_sort;
+
+    #[test]
+    fn sort_works() {
+        test_sort(sort);
+    }
 }

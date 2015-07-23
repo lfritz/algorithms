@@ -17,7 +17,13 @@ pub fn sort<T: Ord + Copy>(v: &mut Vec<T>) {
     }
 }
 
-#[test]
-fn sort_works() {
-    super::super::tests::test_sort(sort);
+#[cfg(test)]
+mod tests {
+    use super::sort;
+    use super::super::super::tests::test_sort;
+
+    #[test]
+    fn sort_works() {
+        test_sort(sort);
+    }
 }
