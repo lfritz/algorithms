@@ -1,6 +1,7 @@
 //! Implementations of data structures and algorithms from Chapter 2:
 //! Sorting.
 
+pub mod heap;
 pub mod insertion;
 pub mod merge;
 pub mod quick;
