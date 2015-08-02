@@ -49,6 +49,7 @@ fn time_sort(rng: &mut ThreadRng,
 
 fn get_sort(name: &String) -> SortFunction {
     match name.as_ref() {
+        "heap"      => algorithms::sorting::heap::sort::sort,
         "quick"     => algorithms::sorting::quick::sort,
         "merge_bu"  => algorithms::sorting::merge::bottom_up::sort,
         "merge_td"  => algorithms::sorting::merge::top_down::sort,

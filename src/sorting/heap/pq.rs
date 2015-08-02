@@ -21,7 +21,8 @@ impl <T: Ord> MaxPQ<T> {
         let n = v.len() - 1;
         v.swap(0, n);
         let result = v.pop();
-        sink(v, 0);
+        let n = v.len();
+        sink(v, 0, n);
         result
     }
 

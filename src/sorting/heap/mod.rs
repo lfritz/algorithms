@@ -1,6 +1,7 @@
 //! Algorithms based on heaps
 
 pub mod pq;
+pub mod sort;
 
 fn swim<T: Ord>(v: &mut Vec<T>, i: usize) {
     let mut i = i;
@@ -12,9 +13,8 @@ fn swim<T: Ord>(v: &mut Vec<T>, i: usize) {
     }
 }
 
-fn sink<T: Ord>(v: &mut Vec<T>, i: usize) {
+fn sink<T: Ord>(v: &mut Vec<T>, i: usize, n: usize) {
     let mut i = i;
-    let n = v.len();
     loop {
         let mut child = 2*i + 1;
         if child >= n { return; }
@@ -51,15 +51,15 @@ mod tests {
     #[test]
     fn sink_works() {
         let mut v = vec![10,9,4,6,7,3,1];
-        sink(&mut v, 0);
+        sink(&mut v, 0, 7);
         assert_eq!(vec![10,9,4,6,7,3,1], v);
 
         let mut v = vec![8,9,4,6,7,3,1];
-        sink(&mut v, 0);
+        sink(&mut v, 0, 7);
         assert_eq!(vec![9,8,4,6,7,3,1], v);
 
         let mut v = vec![5,9,4,6,7,3,1];
-        sink(&mut v, 0);
+        sink(&mut v, 0, 7);
         assert_eq!(vec![9,7,4,6,5,3,1], v);
 
     }
