@@ -2,4 +2,5 @@
 //! *Algorithms*, fourth edition, by Robert Sedgewick and Kevin Wayne.
 
 pub mod fundamentals;
+pub mod searching;
 pub mod sorting;
