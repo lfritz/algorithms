@@ -2,6 +2,7 @@
 //! Undirected Graphs.
 
 pub mod bfs;
+pub mod cc;
 pub mod dfs;
 
 /// Data structure for an undirected graph.
